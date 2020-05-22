@@ -16,7 +16,7 @@ import os
 
 #r = requests.get("https://data.heatonresearch.com/data/t81-558/text/treasure_island.txt")
 #raw_text = r.text
-r = open('meditations.txt',mode='r')
+r = open('data/meditations.txt',mode='r')
 raw_text = r.read()
 r.close()
 print(raw_text[0:1000])
@@ -49,7 +49,7 @@ for i, sentence in enumerate(sentences):
     y[i, char_indices[next_chars[i]]] = 1
     
     
-checkpoint_path = "cp.ckpt"
+checkpoint_path = "checkpoints/cp.ckpt"
 checkpoint_dir = os.path.dirname(checkpoint_path)
 
 # build the model: a single LSTM
